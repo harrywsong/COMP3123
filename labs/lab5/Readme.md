@@ -51,7 +51,7 @@
 - Return 500 page with message "Server Error"
 ```
 app.use((err,req,res,next) => {
-  res.send('This is error router');
+  res.status(500).send('Server Error');
 });
 ```
 ---
@@ -62,10 +62,16 @@ app.use((err,req,res,next) => {
 
 - Why is `express.Router()` used in Express.js applications, and how does it benefit the code structure?
 
+It is used in a way where it allows developers to separate routes into different folders, letting them avoid having to put all the routes and definitions into one js file, which could potentially become extremely long and cluttered otherwise.
+It functions as a "path guide", where it allows the code to seamlessly find and connect to the api endpoints being requested. 
+
+
+
 **7. Error Handling in Express.js**
 
 - How would you implement error handling in the Express routes to ensure that any issues (such as file not found or server errors) are appropriately handled? Provide an example.
 
+Using simple try-catch blocks or having a fallback for errors would simplify the debugging process and allow the developer (or end-user) to find the issue and patch it quickly and efficiently.
 ---
 
 #### Section C: Bonus
@@ -73,6 +79,8 @@ app.use((err,req,res,next) => {
 **7. Dynamic Port Binding in Express.js**
 
 - Explain how the `app.listen(process.env.port || 8081)` line works and why it's useful in production environments.
+
+It defines the port that the Express server should listen on. This is because it makes it clearer and easier to test code during development, and simulate a "live" production product for testing to make sure functions work as they should without having to send it live to test it.
 
 ---
 # Submission Guideline
