@@ -1,8 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const userRoutes = require('./routes/NoteRoutes.js');
 
 // TODO - Update your mongoDB Atals Url here to Connect to the database
-const DB_URL = process.env.DB_URL || "";
+const DB_URL = process.env.DB_URL || "mongodb+srv://test:pKWi1Fb71dWVVKMx@cluster0.xxgvpyq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 const PORT = process.env.PORT || 8081;
 
 const app = express();
@@ -14,6 +15,7 @@ app.get('/', (req, res) => {
     res.send("<h1>Welcome to Note taking application - Week06 Exercise</h1>");
 });
 
+app.use('/', userRoutes);
 // Connect to the database
 mongoose.connect(DB_URL, {
     useNewUrlParser: true,
@@ -21,7 +23,7 @@ mongoose.connect(DB_URL, {
 }).then(() => {
     console.log("Successfully connected to the database mongoDB Atlas Server");    
     app.listen(PORT, () => {
-    console.log("Server is listening on port 3000");
+    console.log("Server is listening on port " + PORT);
 });
 }).catch(err => {
     console.log('Could not connect to the database. Exiting now...', err);
