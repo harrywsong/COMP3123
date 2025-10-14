@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const userRouter = require('./routes/users');
+const router = require('./routes/users');
 
 // Enable JSON body parsing for POST requests
 app.use(express.json());
