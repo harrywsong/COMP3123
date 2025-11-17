@@ -1,0 +1,68 @@
+/* Clean, beginner-friendly styling for PersonList */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f2f6ff;
+    color: #222;
+}
+
+div {
+
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #2a5d9f;
+    margin-bottom: 24px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+}
+
+.person-card {
+    background-color: #fff;
+    border: 1px solid #dbe3f0;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    max-width: 800px;
+}
+
+.person-avatar {
+    border-radius: 50%;
+    border: 3px solid #e6eefb;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    flex-shrink: 0;
+}
+
+.person-details {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    flex: 1;
+    gap: 4px;
+}
+
+p {
+    margin: 4px 0;
+}
+
+p:first-of-type {
+    font-weight: bold;
+    color: #1f3f6d;
+}
