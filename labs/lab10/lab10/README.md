@@ -32,7 +32,7 @@ Uses the **Redux Toolkit** to store a simulated JWT token after a user “logs i
 ## Redux Concepts
 
 ### State
-The data structure Redux manages:
+The data that Redux stores:
 ```javascript
 {
   user: null,
@@ -41,7 +41,7 @@ The data structure Redux manages:
 ```
 
 ### Store
-The centralized state container (defined in `store.js`):
+Where the Redux state is stored (defined in `store.js`):
 ```javascript
 export const store = configureStore({
   reducer: { auth: authReducer }
@@ -49,27 +49,27 @@ export const store = configureStore({
 ```
 
 ### Reducer
-Functions that update state based on actions (defined in `authSlice.js`):
+Updates state based on function actions (defined in `authSlice.js`):
 ```javascript
 login: (state, action) => { /* updates state */ }
 logout: (state) => { /* clears state */ }
 ```
 
 ### Actions
-Instructions dispatched to modify state:
+Object with instructions telling Redux what has occurred:
 ```javascript
 login({ username })
 logout()
 ```
 
 ### Dispatch
-Sending actions to the store:
+Sending of an action to the store so the reducer can update the state:
 ```javascript
 dispatch(login({ username }));
 ```
 
 ### Subscribe
-Components automatically re-render when subscribed state changes:
+Subscription occurs when the UI automatically updates and changes when the Redux state is changed:
 ```javascript
 const { user, token } = useSelector(state => state.auth);
 ```
